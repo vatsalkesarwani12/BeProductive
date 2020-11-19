@@ -1,8 +1,9 @@
 import dependencies.Dependencies
 import dependencies.Version
 
-apply plugin: Dependencies.Plugins.ANDROID_APPLICATION
+apply plugin: Dependencies.Plugins.ANDROID_LIBRARY
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID
+apply plugin: Dependencies.Plugins.KOTLIN_ANDROID_EXTENSIONS
 apply plugin: Dependencies.Plugins.KOTLIN_KAPT
 
 android {
@@ -11,38 +12,32 @@ android {
     buildToolsVersion Version.buildTools
 
     defaultConfig {
-        applicationId "com.vatsal.kesarwani.beproductive"
         minSdkVersion Version.minSdk
         targetSdkVersion Version.targetSdk
         versionCode Version.versionCode
         versionName Version.versionName
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            //shrinkResources true
-            debuggable false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            //manifestPlaceholders = [crashlyticsEnabled: "true"]
-        }
-        debug {
-            //manifestPlaceholders = [crashlyticsEnabled: "false"]
-        }
+    Properties properties = new Properties()
+    if (project.rootProject.file('local.properties').canRead()) {
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
     }
-
-    /*androidExtensions {
-        experimental = true
-    }*/
 
     buildFeatures {
         dataBinding true
     }
 
-    testOptions {
-        unitTests.includeAndroidResources = true
-        unitTests.returnDefaultValues = true
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
     }
 
     /*compileOptions {
@@ -53,7 +48,6 @@ android {
     kotlinOptions {
         jvmTarget = Version.jvmTarget
     }
-
 }
 
 dependencies {
@@ -61,33 +55,56 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation Dependencies.Kotlin.kotlin_stdlib_jdk7
 
-    //Modules
-    implementation project(Dependencies.Module.core)
-    implementation project(Dependencies.Module.login)
-    implementation project(Dependencies.Module.profile)
-    implementation project(Dependencies.Module.logic)
-
     //Android X
     implementation Dependencies.AndroidX.appcompat
     implementation Dependencies.AndroidX.materialDesign
     implementation Dependencies.AndroidX.constraintlayout
     //implementation Dependencies.AndroidX.vectordrawable
+    implementation Dependencies.AndroidX.coreKtx
     implementation Dependencies.AndroidX.core
-    implementation Dependencies.AndroidX.legacySupport
+    api Dependencies.AndroidX.navigation
+    api Dependencies.AndroidX.navigationUI
+
+    //LifeCycle
+    api Dependencies.Lifecycle.extension
 
     //Testing
     testImplementation Dependencies.Test.test_junit
+    testImplementation Dependencies.Test.mockWebServer
+    testImplementation Dependencies.Test.mockito
+    testImplementation Dependencies.Test.test_junit
     androidTestImplementation Dependencies.Test.android_test_espresso_core
 
-    //RxJava
-    implementation Dependencies.RxJava.rxAndroid
+    //Rx-java
+    api Dependencies.RxJava.rxrelay2
+    api Dependencies.RxJava.rxjava2
+    api Dependencies.RxJava.rxAndroid
 
-    //LifeCycle
-    implementation Dependencies.Lifecycle.lifeCycleExtension
+    //Third parties UI Lib
+    api Dependencies.AndroidX.materialDesign
+
+    //Third Party Android tools
+    api Dependencies.Gson.gson
+    api Dependencies.javax
+    api Dependencies.ThirdPartiesLib.reactiveNetwork
+    api Dependencies.ThirdPartiesLib.timber
+    api Dependencies.ThirdPartiesLib.jodaTime
+    api Dependencies.ThirdPartiesLib.componentManager
+    api Dependencies.ThirdPartiesLib.permissionDispatcher
+    api Dependencies.ThirdPartiesLib.circleImageView
+    kapt Dependencies.ThirdPartiesLib.permissionAnnotation
+
+    //Network
+    api Dependencies.Retrofit2.retrofit
+    api Dependencies.Retrofit2.adapterRxjava2
+    api Dependencies.Retrofit2.converterGson
+    api Dependencies.OkHttp3.okHttp3
+    api Dependencies.Facebook.stethoNetwork
 
     //dagger 2
     implementation Dependencies.Dagger.dagger2
     implementation Dependencies.Dagger.daggerAndroidSupport
     kapt Dependencies.Dagger.compiler
     kapt Dependencies.Dagger.processor
+
 }

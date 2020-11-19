@@ -1,48 +1,36 @@
 import dependencies.Dependencies
 import dependencies.Version
 
-apply plugin: Dependencies.Plugins.ANDROID_APPLICATION
+apply plugin: Dependencies.Plugins.ANDROID_LIBRARY
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID
+apply plugin: Dependencies.Plugins.KOTLIN_ANDROID_EXTENSIONS
 apply plugin: Dependencies.Plugins.KOTLIN_KAPT
 
 android {
-
     compileSdkVersion Version.compileSdk
     buildToolsVersion Version.buildTools
 
     defaultConfig {
-        applicationId "com.vatsal.kesarwani.beproductive"
         minSdkVersion Version.minSdk
         targetSdkVersion Version.targetSdk
         versionCode Version.versionCode
         versionName Version.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            //shrinkResources true
-            debuggable false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            //manifestPlaceholders = [crashlyticsEnabled: "true"]
-        }
-        debug {
-            //manifestPlaceholders = [crashlyticsEnabled: "false"]
-        }
-    }
-
-    /*androidExtensions {
-        experimental = true
-    }*/
 
     buildFeatures {
         dataBinding true
     }
 
-    testOptions {
-        unitTests.includeAndroidResources = true
-        unitTests.returnDefaultValues = true
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
     }
 
     /*compileOptions {
@@ -53,7 +41,6 @@ android {
     kotlinOptions {
         jvmTarget = Version.jvmTarget
     }
-
 }
 
 dependencies {
@@ -63,9 +50,6 @@ dependencies {
 
     //Modules
     implementation project(Dependencies.Module.core)
-    implementation project(Dependencies.Module.login)
-    implementation project(Dependencies.Module.profile)
-    implementation project(Dependencies.Module.logic)
 
     //Android X
     implementation Dependencies.AndroidX.appcompat
@@ -73,21 +57,22 @@ dependencies {
     implementation Dependencies.AndroidX.constraintlayout
     //implementation Dependencies.AndroidX.vectordrawable
     implementation Dependencies.AndroidX.core
-    implementation Dependencies.AndroidX.legacySupport
+    implementation Dependencies.AndroidX.coreKtx
 
     //Testing
     testImplementation Dependencies.Test.test_junit
+    testImplementation Dependencies.Test.mockWebServer
+    testImplementation Dependencies.Test.mockito
+    testImplementation Dependencies.Test.mockitoInLine
+    testImplementation Dependencies.Test.testing_core_testing
     androidTestImplementation Dependencies.Test.android_test_espresso_core
-
-    //RxJava
-    implementation Dependencies.RxJava.rxAndroid
-
-    //LifeCycle
-    implementation Dependencies.Lifecycle.lifeCycleExtension
+    kapt Dependencies.ThirdPartiesLib.permissionAnnotation
 
     //dagger 2
     implementation Dependencies.Dagger.dagger2
+    implementation Dependencies.Dagger.daggerAndroid
     implementation Dependencies.Dagger.daggerAndroidSupport
     kapt Dependencies.Dagger.compiler
     kapt Dependencies.Dagger.processor
+
 }
