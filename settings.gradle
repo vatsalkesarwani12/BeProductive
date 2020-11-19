@@ -1,3 +1,4 @@
+include ':logic'
 include ':profile'
 include ':login'
 include ':core'

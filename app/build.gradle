@@ -65,7 +65,7 @@ dependencies {
     implementation project(Dependencies.Module.core)
     implementation project(Dependencies.Module.login)
     implementation project(Dependencies.Module.profile)
-    //implementation project(Dependencies.Module.logic)
+    implementation project(Dependencies.Module.logic)
 
     //Android X
     implementation Dependencies.AndroidX.appcompat
