@@ -1,9 +1,10 @@
-package com.vatsal.kesarwani.login
+package com.vatsal.kesarwani.login.ui
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.vatsal.kesarwani.login.R
 
 class AuthActivity : AppCompatActivity() {
 

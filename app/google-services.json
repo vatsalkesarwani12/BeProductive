@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "459444892227",
+    "firebase_url": "https://be-productive-1f2ed.firebaseio.com",
+    "project_id": "be-productive-1f2ed",
+    "storage_bucket": "be-productive-1f2ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459444892227:android:03d70876f160075357daf6",
+        "android_client_info": {
+          "package_name": "com.vatsal.kesarwani.beproductive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459444892227-1vebkr497aqib4funk85rhtn74cp2f8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7QBXtwJ7UCpG5a5wfdzL1bm3yc2u9IZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459444892227-1vebkr497aqib4funk85rhtn74cp2f8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -78,7 +78,7 @@ class SharedPreferenceHelperImpl(context: Context) : SharedPreferenceHelper {
     }
 
     companion object {
-        private const val PREF_NAME = "com.fitnesstrakar"
+        private const val PREF_NAME = "com.beProductive"
         fun getInstance(context: Context): SharedPreferenceHelperImpl {
             return SharedPreferenceHelperImpl(context)
         }

@@ -8,8 +8,7 @@ import javax.inject.Inject
 
 class SharedPrefUtil @Inject constructor(application: Application) {
 
-    private val mSharePreferences: SharedPreferenceHelper =
-        SharedPreferenceHelperImpl(application)
+    private val mSharePreferences: SharedPreferenceHelper = SharedPreferenceHelperImpl(application)
 
     /**
      * flag for check whether user logged in or not.

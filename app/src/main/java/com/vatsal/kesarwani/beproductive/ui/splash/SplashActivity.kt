@@ -9,7 +9,7 @@ import android.os.Looper
 import com.vatsal.kesarwani.beproductive.R
 import com.vatsal.kesarwani.beproductive.ui.MainActivity
 import com.vatsal.kesarwani.core.utils.SharedPrefUtil
-import com.vatsal.kesarwani.login.AuthActivity
+import com.vatsal.kesarwani.login.ui.AuthActivity
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -35,11 +35,11 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkIfUserLoggedIn() {
-        /*if (sharedPrefUtil.isLoggedIn.not()) {
+        if (sharedPrefUtil.isLoggedIn.not()) {
             AuthActivity.start(this)
         } else {
             MainActivity.start(this)
         }
-        finish()*/
+        finish()
     }
 }

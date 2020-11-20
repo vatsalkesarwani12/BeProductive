@@ -3,6 +3,7 @@ package com.vatsal.kesarwani.beproductive.di
 import android.app.Application
 import com.vatsal.kesarwani.beproductive.di.module.AppModule
 import com.vatsal.kesarwani.beproductive.di.module.ViewModelFactoryModule
+import com.vatsal.kesarwani.login.di.LoginModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -14,7 +15,8 @@ import javax.inject.Singleton
     modules = [
         dagger.android.support.AndroidSupportInjectionModule::class,
         AppModule::class,
-        ViewModelFactoryModule::class
+        ViewModelFactoryModule::class,
+        LoginModule::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {
