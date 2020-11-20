@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Be Productive</string>
+    <string name="default_channel_id">BeProductiveDefaultChannelId</string>
+    <string name="default_channel_name">BeProductiveDefaultChannelId</string>
 </resources>
