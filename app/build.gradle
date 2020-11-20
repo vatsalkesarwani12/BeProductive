@@ -4,6 +4,8 @@ import dependencies.Version
 apply plugin: Dependencies.Plugins.ANDROID_APPLICATION
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID
 apply plugin: Dependencies.Plugins.KOTLIN_KAPT
+apply plugin: Dependencies.Plugins.GOOGLE_SERVICES
+apply plugin: 'kotlin-android'
 
 android {
 
@@ -74,6 +76,11 @@ dependencies {
     //implementation Dependencies.AndroidX.vectordrawable
     implementation Dependencies.AndroidX.core
     implementation Dependencies.AndroidX.legacySupport
+    implementation Dependencies.Firebase.messaging
+    implementation Dependencies.Firebase.analytics
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //Testing
     testImplementation Dependencies.Test.test_junit

@@ -5,6 +5,7 @@ apply plugin: Dependencies.Plugins.ANDROID_LIBRARY
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID_EXTENSIONS
 apply plugin: Dependencies.Plugins.KOTLIN_KAPT
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion Version.compileSdk
@@ -58,6 +59,9 @@ dependencies {
     //implementation Dependencies.AndroidX.vectordrawable
     implementation Dependencies.AndroidX.core
     implementation Dependencies.AndroidX.coreKtx
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //Testing
     testImplementation Dependencies.Test.test_junit
