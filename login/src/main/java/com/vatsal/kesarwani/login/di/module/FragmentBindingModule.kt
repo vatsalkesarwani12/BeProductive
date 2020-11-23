@@ -10,5 +10,4 @@ abstract class FragmentBindingModule {
     @ContributesAndroidInjector
     abstract fun injectLoginFragment() : LoginFragment
 
-
 }

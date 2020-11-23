@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.vatsal.kesarwani.core.extensions.showToast
 import com.vatsal.kesarwani.core.loadingDialog.ViewDialog
 import com.vatsal.kesarwani.core.viewmodelfactory.ViewModelProviderFactory
 import com.vatsal.kesarwani.login.databinding.FragmentLoginBinding
+import com.vatsal.kesarwani.login.ui.AuthViewModel
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.disposables.CompositeDisposable
 import com.vatsal.kesarwani.login.ui.fragment.login.LoginViewState.*
+import com.vatsal.kesarwani.login.utils.VerifyType
 import javax.inject.Inject
 
 class LoginFragment : Fragment() {
@@ -22,6 +25,8 @@ class LoginFragment : Fragment() {
     lateinit var viewModelFactory : ViewModelProviderFactory
 
     lateinit var viewModel : LoginViewModel
+
+    private val activityViewModel: AuthViewModel by activityViewModels()
 
     private lateinit var viewBinding : FragmentLoginBinding
 
@@ -86,7 +91,7 @@ class LoginFragment : Fragment() {
     private fun onSuccess() {
         hideLoading()
 
-
+        activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
     }
 
     override fun onStop() {
