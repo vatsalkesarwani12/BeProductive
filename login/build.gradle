@@ -59,9 +59,6 @@ dependencies {
     //implementation Dependencies.AndroidX.vectordrawable
     implementation Dependencies.AndroidX.core
     implementation Dependencies.AndroidX.coreKtx
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //Testing
     testImplementation Dependencies.Test.test_junit
@@ -78,5 +75,9 @@ dependencies {
     implementation Dependencies.Dagger.daggerAndroidSupport
     kapt Dependencies.Dagger.compiler
     kapt Dependencies.Dagger.processor
+
+    //glide
+    kapt Dependencies.Glide.annotationProcessor
+    kapt Dependencies.Glide.annotationCompiler
 
 }

@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+    <string name="welcome_user">Welcome User</string>
+    <string name="login">Login</string>
+</resources>

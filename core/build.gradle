@@ -107,4 +107,9 @@ dependencies {
     kapt Dependencies.Dagger.compiler
     kapt Dependencies.Dagger.processor
 
+    //glide
+    api Dependencies.Glide.glide
+    kapt Dependencies.Glide.annotationProcessor
+    kapt Dependencies.Glide.annotationCompiler
+
 }
