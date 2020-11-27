@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="logo_dark_pink">#C62A68</color>
     <color name="transparent">#00000000</color>
+
+    <color name="app_color">#F7EEE9</color>
 </resources>
