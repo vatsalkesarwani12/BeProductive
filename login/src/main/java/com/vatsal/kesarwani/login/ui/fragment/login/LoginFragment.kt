@@ -7,16 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.vatsal.kesarwani.core.extensions.showToast
 import com.vatsal.kesarwani.core.loadingDialog.ViewDialog
 import com.vatsal.kesarwani.core.viewmodelfactory.ViewModelProviderFactory
+import com.vatsal.kesarwani.login.data.response.LoginResponse
 import com.vatsal.kesarwani.login.databinding.FragmentLoginBinding
 import com.vatsal.kesarwani.login.ui.AuthViewModel
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.disposables.CompositeDisposable
 import com.vatsal.kesarwani.login.ui.fragment.login.LoginViewState.*
 import com.vatsal.kesarwani.login.utils.VerifyType
+import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 class LoginFragment : Fragment() {
@@ -52,11 +55,7 @@ class LoginFragment : Fragment() {
         viewBinding = FragmentLoginBinding.inflate(inflater)
         initUI()
         observeRendering()
-
-        viewBinding.btLogin.setOnClickListener {
-            activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
-        }
-
+        fieldObserve()
         return viewBinding.root
     }
 
@@ -67,7 +66,13 @@ class LoginFragment : Fragment() {
     }
 
     private fun initUI() {
+        viewBinding.viewModel = viewModel
+    }
 
+    private fun fieldObserve() {
+        viewModel.email.observe(viewLifecycleOwner , {
+            viewBinding.etEmail.error = null
+        })
     }
 
     private fun observeRendering() {
@@ -79,10 +84,17 @@ class LoginFragment : Fragment() {
     private fun render(state : LoginViewState) {
         when(state) {
             Loading -> showLoading()
-            OnSuccess -> onSuccess()
+            DoLogin -> doLogin()
+            is OnSuccess -> onSuccess(state.loginResponse)
             is OnError -> showToast(state.mssg)
-            is OnFieldError -> showToast(state.mssg)//viewBinding.etEmail.error = state.mssg
+            is OnFieldError -> viewBinding.etEmail.error = state.mssg
         }
+    }
+
+    private fun doLogin(){
+        addDisposable(
+                viewModel.login()
+        )
     }
 
     private fun showLoading() {
@@ -93,15 +105,24 @@ class LoginFragment : Fragment() {
         loadingDialog.hideDialog()
     }
 
-    private fun onSuccess() {
+    private fun onSuccess(loginResponse: LoginResponse) {
         hideLoading()
+        when(loginResponse.data){
+            "OTP SENT" -> activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
+            else -> showToast("something went wrong")
+        }
 
-        activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
     }
 
     override fun onStop() {
         super.onStop()
         hideLoading()
+    }
+
+    private fun addDisposable(disposable: Disposable?) {
+        disposable?.let {
+            compositeDisposable.add(it)
+        }
     }
 
     override fun onDestroy() {

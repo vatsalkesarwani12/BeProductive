@@ -146,6 +146,7 @@
                             android:id="@+id/etEmail"
                             style="@style/TextInputEditText.Normal"
                             android:hint="@string/email"
+                            android:text="@={viewModel.email}"
                             android:textColor="@color/app_color"
                             android:textColorHint="@color/text_hint"
                             android:inputType="textEmailAddress" />
@@ -157,6 +158,7 @@
                         style="@style/Button.Rounded.Filled"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/let_s_get_started"
+                        android:onClick="@{() -> viewModel.onClick()}"
                         app:layout_constraintBottom_toBottomOf="@id/guideline2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

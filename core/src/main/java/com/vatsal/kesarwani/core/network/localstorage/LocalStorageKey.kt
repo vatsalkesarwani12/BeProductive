@@ -1,7 +1,7 @@
 package com.vatsal.kesarwani.core.network.localstorage
 
 enum class LocalStorageKey {
-    X_AUTH_TOKEN,
+    BEARER_TOKEN,
     IS_LOGGED_IN,
     DEVICE_TOKEN,
     IS_DEVICE_REGISTERED,
