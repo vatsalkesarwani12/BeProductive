@@ -2,15 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.fragment.login.LoginFragment">
-
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.vatsal.kesarwani.login.ui.fragment.login.LoginViewModel" />
-
-    </data>
+    tools:context=".ui.fragment.started.StartFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -78,7 +70,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.4" />
+                        app:layout_constraintGuide_percent="0.32" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.55" />
 
                     <androidx.constraintlayout.widget.Guideline
                         android:id="@+id/guideline7"
@@ -101,8 +100,8 @@
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/let_s_pledge_to_be_productive"
-                        android:textColor="@color/text_pink"
+                        android:text="@string/can_t_focus_on_your_work"
+                        android:textColor="@color/text_blue"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -111,52 +110,50 @@
                         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvLogin"
+                        android:id="@+id/textView3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="@string/enter_your_email_id"
+                        android:text="@string/wasting_time_in_scrolling_stories_and_chatting"
                         android:textColor="@color/text_light"
-                        android:paddingBottom="1dp"
                         android:textSize="14sp"
-                        app:layout_constraintBottom_toTopOf="@+id/tilEmail"
-                        app:layout_constraintStart_toStartOf="@+id/tilEmail"
-                        app:layout_constraintTop_toTopOf="@+id/guideline5"
-                        app:layout_constraintVertical_chainStyle="packed" />
+                        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+                        app:layout_constraintEnd_toEndOf="@+id/textView2"
+                        app:layout_constraintStart_toStartOf="@+id/textView2"
+                        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilEmail"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginEnd="24dp"
-                        app:boxStrokeColor="@color/app_color"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        app:boxStrokeWidth="2dp"
-                        app:hintEnabled="false"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/so_here_is_a_so_solution_to_your_problems_and_we_promise_to_help_you_achieve_your_productive_time_back_and_learn_great_things"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+                        app:layout_constraintEnd_toEndOf="@+id/textView3"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/terms_and_conditions"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
                         app:layout_constraintBottom_toTopOf="@+id/guideline7"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvLogin">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etEmail"
-                            style="@style/TextInputEditText.Normal"
-                            android:hint="@string/email"
-                            android:textColor="@color/app_color"
-                            android:textColorHint="@color/text_hint"
-                            android:inputType="textEmailAddress" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
+                        app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btLogin"
+                        android:id="@+id/btStart"
                         style="@style/Button.Rounded.Filled"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/let_s_get_started"
+                        android:text="@string/let_s_be_productive"
                         app:layout_constraintBottom_toBottomOf="@id/guideline2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +179,7 @@
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sc2"
+            android:src="@drawable/sc1"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -192,7 +189,7 @@
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/case2"
+            android:src="@drawable/case1"
             app:layout_constraintBottom_toTopOf="@+id/guideline1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -9,7 +9,7 @@
 
             <stroke
                 android:width="2dp"
-                android:color="@color/logo_dark_pink"/>
+                android:color="@color/button_green"/>
 
             <corners android:radius="10dp"/>
 

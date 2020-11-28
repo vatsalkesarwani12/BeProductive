@@ -1,4 +1,20 @@
 <resources>
     <string name="welcome_user">Welcome User</string>
     <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="can_t_focus_on_your_work">Can’t focus on your work?</string>
+    <string name="terms_and_conditions"><u>Terms and Conditions</u></string>
+    <string name="wasting_time_in_scrolling_stories_and_chatting">Wasting time in scrolling stories and chatting.</string>
+    <string name="so_here_is_a_so_solution_to_your_problems_and_we_promise_to_help_you_achieve_your_productive_time_back_and_learn_great_things">So here is a so solution to your problems and we promise to help you achieve your productive time back and learn great things.</string>
+    <string name="let_s_be_productive">Let\'s Be Productive</string>
+    <string name="let_s_pledge_to_be_productive">Let’s Pledge to Be Productive !!</string>
+    <string name="enter_your_email_id">Enter your Email ID</string>
+    <string name="let_s_get_started">Let’s Get Started</string>
+    <string name="email">Email</string>
+    <string name="enter_the_otp">Enter the otp</string>
+    <string name="otp">OTP</string>
+    <string name="let_me_in">Let me in</string>
+    <string name="resend_otp"><u>Resend Otp?</u></string>
+    <string name="check_your_notification">Check your notification</string>
 </resources>

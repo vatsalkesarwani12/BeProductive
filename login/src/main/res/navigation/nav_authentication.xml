@@ -3,19 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_authentication.xml"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.vatsal.kesarwani.login.ui.fragment.started.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+
+        <action
+            android:id="@+id/action_startFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.vatsal.kesarwani.login.ui.fragment.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
+
         <action
             android:id="@+id/action_loginFragment_to_otpFragment"
             app:destination="@id/otpFragment" />
+
     </fragment>
 
-    <fragment android:id="@+id/otpFragment"
-        android:label="fragment_otp"/>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.vatsal.kesarwani.login.ui.fragment.otp.OtpFragment"
+        android:label="fragment_otp"
+        tools:layout="@layout/fragment_otp" />
 
 </navigation>

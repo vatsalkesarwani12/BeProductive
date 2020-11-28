@@ -48,10 +48,15 @@ class LoginFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewBinding = FragmentLoginBinding.inflate(inflater)
         initUI()
         observeRendering()
+
+        viewBinding.btLogin.setOnClickListener {
+            activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
+        }
+
         return viewBinding.root
     }
 
@@ -76,7 +81,7 @@ class LoginFragment : Fragment() {
             Loading -> showLoading()
             OnSuccess -> onSuccess()
             is OnError -> showToast(state.mssg)
-            is OnFieldError -> viewBinding.etEmail.error = state.mssg
+            is OnFieldError -> showToast(state.mssg)//viewBinding.etEmail.error = state.mssg
         }
     }
 

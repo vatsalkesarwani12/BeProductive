@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.fragment.login.LoginFragment">
-
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.vatsal.kesarwani.login.ui.fragment.login.LoginViewModel" />
-
-    </data>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.otp.OtpFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -101,8 +93,8 @@
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/let_s_pledge_to_be_productive"
-                        android:textColor="@color/text_pink"
+                        android:text="@string/check_your_notification"
+                        android:textColor="@color/text_yellow"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -111,11 +103,11 @@
                         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvLogin"
+                        android:id="@+id/tvOtp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="@string/enter_your_email_id"
+                        android:text="@string/enter_the_otp"
                         android:textColor="@color/text_light"
                         android:paddingBottom="1dp"
                         android:textSize="14sp"
@@ -123,6 +115,19 @@
                         app:layout_constraintStart_toStartOf="@+id/tilEmail"
                         app:layout_constraintTop_toTopOf="@+id/guideline5"
                         app:layout_constraintVertical_chainStyle="packed" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvResend"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="1dp"
+                        android:text="@string/resend_otp"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvOtp"
+                        app:layout_constraintEnd_toEndOf="@+id/tilEmail"
+                        app:layout_constraintTop_toTopOf="@+id/tvOtp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilEmail"
@@ -140,23 +145,23 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvLogin">
+                        app:layout_constraintTop_toBottomOf="@+id/tvOtp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etEmail"
                             style="@style/TextInputEditText.Normal"
-                            android:hint="@string/email"
+                            android:hint="@string/otp"
                             android:textColor="@color/app_color"
                             android:textColorHint="@color/text_hint"
-                            android:inputType="textEmailAddress" />
+                            android:inputType="phone" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btLogin"
+                        android:id="@+id/button"
                         style="@style/Button.Rounded.Filled"
                         android:fontFamily="@font/montserrat"
-                        android:text="@string/let_s_get_started"
+                        android:text="@string/let_me_in"
                         app:layout_constraintBottom_toBottomOf="@id/guideline2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +187,7 @@
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sc2"
+            android:src="@drawable/sc3"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -192,7 +197,7 @@
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/case2"
+            android:src="@drawable/case3"
             app:layout_constraintBottom_toTopOf="@+id/guideline1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

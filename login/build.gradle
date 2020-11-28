@@ -59,6 +59,8 @@ dependencies {
     //implementation Dependencies.AndroidX.vectordrawable
     implementation Dependencies.AndroidX.core
     implementation Dependencies.AndroidX.coreKtx
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //Testing
     testImplementation Dependencies.Test.test_junit

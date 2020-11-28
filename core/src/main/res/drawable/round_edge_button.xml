@@ -7,9 +7,9 @@
         <shape
             android:shape="rectangle">
 
-            <solid android:color="@color/logo_dark_pink"/>
+            <solid android:color="@color/button_green"/>
 
-            <corners android:radius="10dp"/>
+            <corners android:radius="8dp"/>
 
         </shape>
 

@@ -50,8 +50,11 @@ class AuthActivity : AppCompatActivity() {
 
     private fun render(state: AuthViewState) {
         when(state) {
+            GoToLoginScreen -> {
+                getNavController().navigate(R.id.action_startFragment_to_loginFragment)
+            }
             is GoToOtpScreen -> {
-
+                getNavController().navigate(R.id.action_loginFragment_to_otpFragment)
             }
             NewUserAccount -> {
 

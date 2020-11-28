@@ -21,6 +21,10 @@ class AuthViewModel @Inject constructor(
         stateObservable.postValue(authViewState)
     }
 
+    fun goToLoginScreen(){
+        publishState(GoToLoginScreen)
+    }
+
     fun goToOtpScreen(data : String, type : VerifyType){
         publishState(GoToOtpScreen(data, type))
     }
