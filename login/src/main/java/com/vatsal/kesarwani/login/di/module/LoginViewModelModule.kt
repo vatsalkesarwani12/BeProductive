@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.vatsal.kesarwani.core.viewmodelfactory.ViewModelKey
 import com.vatsal.kesarwani.login.ui.AuthViewModel
 import com.vatsal.kesarwani.login.ui.fragment.login.LoginViewModel
+import com.vatsal.kesarwani.login.ui.fragment.otp.OtpViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -20,5 +21,10 @@ abstract class LoginViewModelModule{
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     abstract fun bindLoginViewModel(viewModel : LoginViewModel) : ViewModel?
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(OtpViewModel::class)
+    abstract fun bindOtpViewModel(viewModel : OtpViewModel) : ViewModel?
 
 }

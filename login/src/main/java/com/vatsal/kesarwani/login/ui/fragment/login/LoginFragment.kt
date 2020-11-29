@@ -11,6 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.vatsal.kesarwani.core.extensions.showToast
 import com.vatsal.kesarwani.core.loadingDialog.ViewDialog
+import com.vatsal.kesarwani.core.utils.SharedPrefUtil
 import com.vatsal.kesarwani.core.viewmodelfactory.ViewModelProviderFactory
 import com.vatsal.kesarwani.login.data.response.LoginResponse
 import com.vatsal.kesarwani.login.databinding.FragmentLoginBinding
@@ -23,6 +24,9 @@ import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 class LoginFragment : Fragment() {
+
+    @Inject
+    lateinit var sharedPrefUtil: SharedPrefUtil
     
     @Inject
     lateinit var viewModelFactory : ViewModelProviderFactory
@@ -67,6 +71,7 @@ class LoginFragment : Fragment() {
 
     private fun initUI() {
         viewBinding.viewModel = viewModel
+        viewBinding.lifecycleOwner = viewLifecycleOwner
     }
 
     private fun fieldObserve() {
@@ -108,7 +113,10 @@ class LoginFragment : Fragment() {
     private fun onSuccess(loginResponse: LoginResponse) {
         hideLoading()
         when(loginResponse.data){
-            "OTP SENT" -> activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
+            "OTP SENT" -> {
+                sharedPrefUtil.loginEmail = viewBinding.etEmail.text.toString()
+                activityViewModel.goToOtpScreen("",VerifyType.EMAIL)
+            }
             else -> showToast("something went wrong")
         }
 

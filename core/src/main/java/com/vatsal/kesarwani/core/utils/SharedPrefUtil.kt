@@ -46,6 +46,18 @@ class SharedPrefUtil @Inject constructor(application: Application) {
             mSharePreferences.setString(LocalStorageKey.DEVICE_TOKEN.name, value)
         }
 
+    /**
+     * Email Address
+     */
+    var loginEmail: String = ""
+        get() {
+            return mSharePreferences.getString(LocalStorageKey.LOGIN_EMAIL.name)
+        }
+        set(value) {
+            field = value
+            mSharePreferences.setString(LocalStorageKey.LOGIN_EMAIL.name, value)
+        }
+
     fun clearSharedPref() {
         mSharePreferences.clear()
     }
