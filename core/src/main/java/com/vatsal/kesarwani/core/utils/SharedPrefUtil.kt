@@ -27,11 +27,11 @@ class SharedPrefUtil @Inject constructor(application: Application) {
      */
     var authKey: String = ""
         get() {
-            return mSharePreferences.getString(LocalStorageKey.X_AUTH_TOKEN.name)
+            return mSharePreferences.getString(LocalStorageKey.BEARER_TOKEN.name)
         }
         set(value) {
             field = value
-            mSharePreferences.setString(LocalStorageKey.X_AUTH_TOKEN.name, value)
+            mSharePreferences.setString(LocalStorageKey.BEARER_TOKEN.name, value)
         }
 
     /**
@@ -44,6 +44,18 @@ class SharedPrefUtil @Inject constructor(application: Application) {
         set(value) {
             field = value
             mSharePreferences.setString(LocalStorageKey.DEVICE_TOKEN.name, value)
+        }
+
+    /**
+     * Email Address
+     */
+    var loginEmail: String = ""
+        get() {
+            return mSharePreferences.getString(LocalStorageKey.LOGIN_EMAIL.name)
+        }
+        set(value) {
+            field = value
+            mSharePreferences.setString(LocalStorageKey.LOGIN_EMAIL.name, value)
         }
 
     fun clearSharedPref() {

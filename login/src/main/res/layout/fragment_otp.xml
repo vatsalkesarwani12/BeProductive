@@ -4,6 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.otp.OtpFragment">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.vatsal.kesarwani.login.ui.fragment.otp.OtpViewModel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -111,8 +119,8 @@
                         android:textColor="@color/text_light"
                         android:paddingBottom="1dp"
                         android:textSize="14sp"
-                        app:layout_constraintBottom_toTopOf="@+id/tilEmail"
-                        app:layout_constraintStart_toStartOf="@+id/tilEmail"
+                        app:layout_constraintBottom_toTopOf="@+id/tilOtp"
+                        app:layout_constraintStart_toStartOf="@+id/tilOtp"
                         app:layout_constraintTop_toTopOf="@+id/guideline5"
                         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -121,16 +129,16 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
+                        android:onClick="@{() -> viewModel.resendOtp()}"
                         android:paddingBottom="1dp"
                         android:text="@string/resend_otp"
                         android:textColor="@color/text_light"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="@+id/tvOtp"
-                        app:layout_constraintEnd_toEndOf="@+id/tilEmail"
-                        app:layout_constraintTop_toTopOf="@+id/tvOtp" />
+                        app:layout_constraintEnd_toEndOf="@+id/tilOtp" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilEmail"
+                        android:id="@+id/tilOtp"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -148,12 +156,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvOtp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etEmail"
+                            android:id="@+id/etOtp"
                             style="@style/TextInputEditText.Normal"
                             android:hint="@string/otp"
+                            android:text="@={viewModel.otp}"
                             android:textColor="@color/app_color"
                             android:textColorHint="@color/text_hint"
-                            android:inputType="phone" />
+                            android:inputType="number"
+                            android:lines="1"
+                            android:imeOptions="actionDone"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,6 +173,7 @@
                         style="@style/Button.Rounded.Filled"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/let_me_in"
+                        android:onClick="@{() -> viewModel.onClick()}"
                         app:layout_constraintBottom_toBottomOf="@id/guideline2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

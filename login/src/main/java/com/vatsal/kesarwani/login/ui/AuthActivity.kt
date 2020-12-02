@@ -13,6 +13,7 @@ import com.vatsal.kesarwani.login.navigation.LoginNavigation
 import dagger.android.AndroidInjection
 import me.vponomarenko.injectionmanager.x.XInjectionManager
 import com.vatsal.kesarwani.login.ui.AuthViewState.*
+import com.vatsal.kesarwani.login.ui.fragment.otp.OtpFragment
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity() {
@@ -54,7 +55,10 @@ class AuthActivity : AppCompatActivity() {
                 getNavController().navigate(R.id.action_startFragment_to_loginFragment)
             }
             is GoToOtpScreen -> {
-                getNavController().navigate(R.id.action_loginFragment_to_otpFragment)
+                getNavController().navigate(
+                    R.id.otpFragment,
+                    OtpFragment.createBundle(state.type, state.data)
+                )
             }
             NewUserAccount -> {
 
