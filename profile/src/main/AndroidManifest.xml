@@ -3,7 +3,7 @@
     package="com.vatsal.kesarwani.profile">
 
     <application>
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".ui.editProfile.EditProfileActivity"></activity>
     </application>
 
 </manifest>

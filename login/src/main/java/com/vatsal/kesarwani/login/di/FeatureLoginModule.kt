@@ -16,7 +16,7 @@ import retrofit2.Retrofit
             LoginViewModelModule::class
         ]
 )
-class LoginModule {
+class FeatureLoginModule {
 
     @Provides
     fun provideLoginAPIService(retrofit: Retrofit): LoginApiService {
