@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.12" />
+            app:layout_constraintGuide_percent="0.18" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
@@ -50,83 +50,95 @@
                 app:cardBackgroundColor="@color/card_color"
                 app:cardCornerRadius="20dp">
 
+                <!--<androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp">-->
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.02" />
+                     <!--<androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline3"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.02" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.22" />
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline10"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.22" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.36" />
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline9"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.34" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.5" />
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline5"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.5" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.64" />
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline6"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.64" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.78" />
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline7"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.85" />
 
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.95" />
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.95" />-->
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/textView2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
                         android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/create_your_profile"
                         android:textColor="@color/text_red"
                         android:textSize="24sp"
                         android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/civProfile"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/civProfile"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_margin="12dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="24dp"
                         android:src="@drawable/ic_def_dp"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+                        app:layout_constraintBottom_toTopOf="@+id/tilFirstName"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -150,15 +162,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         app:boxStrokeColor="@color/app_color"
                         app:boxStrokeWidth="2dp"
                         app:hintEnabled="false"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+                        app:layout_constraintBottom_toTopOf="@+id/tilLastName"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/civProfile">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etFirstName"
@@ -192,15 +206,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         app:boxStrokeColor="@color/app_color"
                         app:boxStrokeWidth="2dp"
                         app:hintEnabled="false"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+                        app:layout_constraintBottom_toTopOf="@+id/tilAge"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilFirstName">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etLastName"
@@ -234,15 +250,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         app:boxStrokeColor="@color/app_color"
                         app:boxStrokeWidth="2dp"
                         app:hintEnabled="false"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+                        app:layout_constraintBottom_toTopOf="@+id/tilPhone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilLastName">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etAge"
@@ -289,15 +307,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="144dp"
+                        android:layout_marginBottom="12dp"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         app:boxStrokeColor="@color/app_color"
                         app:boxStrokeWidth="2dp"
                         app:hintEnabled="false"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+                        app:layout_constraintBottom_toTopOf="@+id/button"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilAge">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPhone"
@@ -315,7 +335,7 @@
                         android:id="@+id/btVerify"
                         style="@style/Button.Rounded.Filled"
                         android:layout_width="110dp"
-                        android:layout_height="45dp"
+                        android:layout_height="46dp"
                         android:layout_marginStart="10dp"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/verify"
@@ -330,12 +350,16 @@
                         style="@style/Button.Rounded.Filled"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/submit"
-                        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+                        android:layout_marginBottom="44dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+                        app:layout_constraintTop_toBottomOf="@+id/tilPhone" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--</androidx.core.widget.NestedScrollView>-->
 
             </androidx.cardview.widget.CardView>
 
