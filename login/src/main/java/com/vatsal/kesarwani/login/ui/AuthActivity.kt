@@ -61,7 +61,7 @@ class AuthActivity : AppCompatActivity() {
                 )
             }
             NewUserAccount -> {
-
+                navigation.gotoEditProfile(this)
             }
             ReLoginUser -> {
 

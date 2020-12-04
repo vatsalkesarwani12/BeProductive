@@ -1,0 +1,11 @@
+<resources>
+    <string name="create_your_profile">Create your profile</string>
+    <string name="edit_your_profile">Edit your profile</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="age">Age</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="optional">Optional</string>
+    <string name="verify">Verify</string>
+    <string name="submit">Submit</string>
+</resources>

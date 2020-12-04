@@ -114,4 +114,7 @@ dependencies {
     kapt Dependencies.Glide.annotationProcessor
     kapt Dependencies.Glide.annotationCompiler
 
+    //circular image view
+    api Dependencies.ThirdPartiesLib.circleImageView
+
 }

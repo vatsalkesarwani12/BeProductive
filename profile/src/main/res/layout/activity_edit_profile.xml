@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.editProfile.EditProfileActivity" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_small_logo"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-20dp"
+                android:elevation="@dimen/cardview_compat_inset_shadow"
+                app:cardBackgroundColor="@color/card_color"
+                app:cardCornerRadius="20dp">
+
+                <!--<androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp">-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                     <!--<androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline3"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.02" />
+
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline10"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.22" />
+
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline9"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.34" />
+
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline5"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.5" />
+
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline6"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.64" />
+
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline7"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.85" />
+
+                     <androidx.constraintlayout.widget.Guideline
+                         android:id="@+id/guideline2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         app:layout_constraintGuide_percent="0.95" />-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/create_your_profile"
+                        android:textColor="@color/text_red"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/civProfile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/civProfile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="24dp"
+                        android:src="@drawable/ic_def_dp"
+                        app:layout_constraintBottom_toTopOf="@+id/tilFirstName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFirstName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="1dp"
+                        android:text="@string/first_name"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tilFirstName"
+                        app:layout_constraintStart_toStartOf="@+id/tilFirstName"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilFirstName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        app:boxStrokeColor="@color/app_color"
+                        app:boxStrokeWidth="2dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toTopOf="@+id/tilLastName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/civProfile">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFirstName"
+                            style="@style/TextInputEditText.Normal"
+                            android:hint="@string/first_name"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:textColor="@color/app_color"
+                            android:textColorHint="@color/text_hint" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLastName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="1dp"
+                        android:text="@string/last_name"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tilLastName"
+                        app:layout_constraintStart_toStartOf="@+id/tilLastName"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilLastName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        app:boxStrokeColor="@color/app_color"
+                        app:boxStrokeWidth="2dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toTopOf="@+id/tilAge"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilFirstName">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLastName"
+                            style="@style/TextInputEditText.Normal"
+                            android:hint="@string/last_name"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:textColor="@color/app_color"
+                            android:textColorHint="@color/text_hint" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="1dp"
+                        android:text="@string/age"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tilAge"
+                        app:layout_constraintStart_toStartOf="@+id/tilAge"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAge"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        app:boxStrokeColor="@color/app_color"
+                        app:boxStrokeWidth="2dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toTopOf="@+id/tilPhone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilLastName">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAge"
+                            style="@style/TextInputEditText.Normal"
+                            android:hint="@string/age"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:textColor="@color/app_color"
+                            android:textColorHint="@color/text_hint" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="1dp"
+                        android:text="@string/phone_number"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tilPhone"
+                        app:layout_constraintStart_toStartOf="@+id/tilPhone"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvResend"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="1dp"
+                        android:text="@string/optional"
+                        android:textColor="@color/text_hint"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvPhone"
+                        app:layout_constraintEnd_toEndOf="@+id/btVerify" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPhone"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="144dp"
+                        android:layout_marginBottom="12dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        app:boxStrokeColor="@color/app_color"
+                        app:boxStrokeWidth="2dp"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toTopOf="@+id/button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilAge">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPhone"
+                            style="@style/TextInputEditText.Normal"
+                            android:hint="@string/phone_number"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:textColor="@color/app_color"
+                            android:textColorHint="@color/text_hint" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btVerify"
+                        style="@style/Button.Rounded.Filled"
+                        android:layout_width="110dp"
+                        android:layout_height="46dp"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/verify"
+                        android:textAllCaps="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/tilPhone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tilPhone"
+                        app:layout_constraintTop_toTopOf="@+id/tilPhone" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button"
+                        style="@style/Button.Rounded.Filled"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/submit"
+                        android:layout_marginBottom="44dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tilPhone" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--</androidx.core.widget.NestedScrollView>-->
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -5,6 +5,7 @@ apply plugin: Dependencies.Plugins.ANDROID_LIBRARY
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID
 apply plugin: Dependencies.Plugins.KOTLIN_ANDROID_EXTENSIONS
 apply plugin: Dependencies.Plugins.KOTLIN_KAPT
+apply plugin: 'kotlin-android'
 
 android {
 

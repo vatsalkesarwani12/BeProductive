@@ -153,7 +153,10 @@ class OtpFragment : Fragment() {
         if (emailOtpResponse.status.equals("OK")){
             sharedPrefUtil.authKey = emailOtpResponse.data?.token.toString()
 
-            showSnackBar(emailOtpResponse.data?.accStatus.toString())
+            /**test */
+            showToast(emailOtpResponse.data?.accStatus.toString())
+
+            activityViewModel.newUser()
 
         }else{
             showToast("Something went wrong")
